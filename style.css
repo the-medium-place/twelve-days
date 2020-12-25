@@ -27,7 +27,7 @@ body {
     height: 600px;
 }
 
-#day-img {
+.day-img {
     max-height: 100%;
     max-width: 100%;
 }

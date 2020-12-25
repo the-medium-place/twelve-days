@@ -63,6 +63,7 @@ const twelveDaysArr = [
 ]
 const symbols = ['🎼','🎤','🥁','🎸','🎵','🎶','🎄', '💃']
 let counterIndex = 0;
+const animationOptions = ['animate__backInUp','animate__rotateInDownLeft','animate__fadeInTopLeft', 'animate__fadeInTopRight', 'animate__bounceInDown' ]
 
 // renderButtons();
 function renderButtons() {
@@ -87,8 +88,8 @@ function renderDay() {
     $(".day-text").text('🎄'+twelveDaysArr[counterIndex].gift+'🎄');
     $("#day")
     .text(twelveDaysArr[counterIndex].dayTxt);
-    const newImg = $("#day-img");
-    newImg.addClass('animate__backInUp animate__faster')
+    const newImg = $("<img>");
+    newImg.addClass(`day-img animate__animated animate__faster ${animationOptions[Math.floor(Math.random()*animationOptions.length)]}`)
     newImg.attr('src', twelveDaysArr[counterIndex].img)
     newImg.attr('alt', twelveDaysArr[counterIndex].dayTxt)
     $(".img-box").empty().append(newImg)
