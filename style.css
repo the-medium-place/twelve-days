@@ -22,3 +22,12 @@ body {
 .biggest-text {
     font-size: 4.5rem;
 }
+
+.img-box {
+    height: 600px;
+}
+
+#day-img {
+    max-height: 100%;
+    width: 100%;
+}

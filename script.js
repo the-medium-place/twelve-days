@@ -7,12 +7,12 @@ const twelveDaysArr = [
     {
         gift: 'Two Turtle-Doves',
         dayTxt: '2nd',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/turtledoves.jpg'
     },
     {
         gift: 'Three French Hens',
         dayTxt: '3rd',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/frenchhens.jpg'
     },
     {
         gift: 'Four Calling Birds',
@@ -27,7 +27,7 @@ const twelveDaysArr = [
     {
         gift: 'Six Geese a-laying',
         dayTxt: '6th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/geese.jpg'
     },
     {
         gift: 'Seven Swans a-swimming',
@@ -47,12 +47,12 @@ const twelveDaysArr = [
     {
         gift: 'Ten Lords a-leaping',
         dayTxt: '10th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/lords.jpg'
     },
     {
         gift: 'Eleven Pipers piping',
         dayTxt: '11th',
-        img: 'images/pipers.png'
+        img: 'images/pipers.jpg'
     },
     {
         gift: 'Twelve Drummers Drumming',
@@ -61,7 +61,7 @@ const twelveDaysArr = [
     },
 
 ]
-
+const symbols = ['🎼','🎤','🥁','🎸','🎵','🎶','🎄']
 let counterIndex = 0;
 
 // renderButtons();
@@ -84,7 +84,7 @@ function renderButtons() {
 
 renderDay();
 function renderDay() {
-    $(".day-text").text(twelveDaysArr[counterIndex].gift);
+    $(".day-text").text('🎄'+twelveDaysArr[counterIndex].gift+'🎄');
     $("#day")
     .text(twelveDaysArr[counterIndex].dayTxt);
     const newImg = $("#day-img");
@@ -114,7 +114,7 @@ $("#forward-btn").on('click', () => {
     renderDay();
 })
 
-document.addEventListener('keyup', (e)=>{
+$(document).on('keyup', (e)=>{
     const key = e.key;
     switch(key){
         case 'ArrowLeft':
@@ -128,7 +128,7 @@ document.addEventListener('keyup', (e)=>{
     }
 })
 
-document.addEventListener('keydown', function (event) {
+$(document).on('keydown', function (event) {
     const key = event.key;
     switch (key) {
         case 'ArrowLeft':
