@@ -70,8 +70,8 @@ function renderButtons() {
     for (let i = 0; i < 12; i++) {
         const newBtn = $("<button>");
         newBtn.addClass("day-btn btn btn-lg day-btn m-1");
-        
-        if(i === counterIndex){
+
+        if (i === counterIndex) {
             newBtn.addClass('btn-danger');
         } else {
             newBtn.addClass('btn-success')
@@ -93,19 +93,85 @@ function renderDay() {
     renderButtons();
 }
 
-$('.button-row').on('click', '.day-btn', (event)=>{
+$('.button-row').on('click', '.day-btn', (event) => {
     console.log('day clicked')
-    counterIndex = parseInt(event.target.getAttribute('data-day'))-1
+    counterIndex = parseInt(event.target.getAttribute('data-day')) - 1
     console.log(counterIndex);
     renderDay();
 })
 
-$('#back-btn').on('click', ()=>{
+$('#back-btn').on('click', () => {
     counterIndex === 0 ? counterIndex = 11 : counterIndex--;
     renderDay();
 })
 
-$("#forward-btn").on('click', ()=>{
+$("#forward-btn").on('click', () => {
     counterIndex === 11 ? counterIndex = 0 : counterIndex++;
     renderDay();
 })
+
+document.addEventListener('keydown', function (event) {
+    const key = event.key;
+    console.log(key)
+    switch (key) {
+        case 'ArrowLeft':
+            counterIndex === 0 ? counterIndex = 11 : counterIndex--;
+            renderDay();
+            break;
+        case 'ArrowRight':
+            counterIndex === 11 ? counterIndex = 0 : counterIndex++;
+            renderDay();
+            break;
+        case '1':
+            counterIndex=0;
+            renderDay();
+            break;
+        case '2':
+            counterIndex=1;
+            renderDay();
+            break;
+        case '3':
+            counterIndex=2;
+            renderDay();
+            break;
+        case '4':
+            counterIndex=3;
+            renderDay();
+            break;
+        case '5':
+            counterIndex=4;
+            renderDay();
+            break;
+        case '6':
+            counterIndex=5;
+            renderDay();
+            break;
+        case '7':
+            counterIndex=6;
+            renderDay();
+            break;
+        case '8':
+            counterIndex=7;
+            renderDay();
+            break;
+        case '9':
+            counterIndex=8;
+            renderDay();
+            break;
+        case '0':
+            counterIndex=9;
+            renderDay();
+            break;
+        case '!':
+            counterIndex=10;
+            renderDay();
+            break;
+        case '@':
+            counterIndex=11;
+            renderDay();
+            break;
+        default:
+            break;
+    }
+
+});
