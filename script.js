@@ -2,12 +2,12 @@ const twelveDaysArr = [
     {
         gift: 'Partridge In a Pear Tree',
         dayTxt: '1st',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/partridge.PNG'
     },
     {
         gift: 'Two Turtle-Doves',
         dayTxt: '2nd',
-        img: 'images/turtledoves.jpg'
+        img: 'images/turtledoves.PNG'
     },
     {
         gift: 'Three French Hens',
@@ -17,12 +17,12 @@ const twelveDaysArr = [
     {
         gift: 'Four Calling Birds',
         dayTxt: '4th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/birds.PNG'
     },
     {
         gift: 'FIVE GOLD RINGS',
         dayTxt: '5th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/goldie.jpg'
     },
     {
         gift: 'Six Geese a-laying',
@@ -32,17 +32,17 @@ const twelveDaysArr = [
     {
         gift: 'Seven Swans a-swimming',
         dayTxt: '7th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/swans.jpeg'
     },
     {
         gift: 'Eight Maids a-milking',
         dayTxt: '8th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/maids.jpg'
     },
     {
         gift: 'Nine Ladies dancing',
         dayTxt: '9th',
-        img: 'https://placekitten.com/200/200'
+        img: 'images/ladies.jpeg'
     },
     {
         gift: 'Ten Lords a-leaping',
@@ -61,7 +61,7 @@ const twelveDaysArr = [
     },
 
 ]
-const symbols = ['🎼','🎤','🥁','🎸','🎵','🎶','🎄']
+const symbols = ['🎼','🎤','🥁','🎸','🎵','🎶','🎄', '💃']
 let counterIndex = 0;
 
 // renderButtons();
