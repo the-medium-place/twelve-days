@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
 <link rel="stylesheet" href="style.css">
 
 
@@ -14,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row d-flex justify-content-center title-row my-3 p-2">
+        <div class="row d-flex justify-content-center title-row my-3 p-2 bg-success">
             <h1 class="biggest-text text-center text-bold">Twelve Days of Christmas!</h1>
         </div>
 
@@ -24,8 +28,8 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-center mt-3 py-2">
-            <h3 id="day-of-xmas">On the <span id="day" class="text-danger p-1 bg-light"></span> of Christmas my true love gave to me...</h3>
+        <div class="row d-flex justify-content-center mt-3 py-3">
+            <h3 id="day-of-xmas">On the <span id="day" class="text-danger text-bold p-1 bg-light animate__animated"></span> day of Christmas my true love gave to me...</h3>
         </div>
 
         <div class="row">
@@ -35,12 +39,12 @@
             </div>
 
         </div>
-        <div class="row img-wrapper rounded shadow d-flex justify-content-center">
+        <div class="row img-wrapper rounded shadow d-flex justify-content-center mb-4">
             <div class="col-2 d-flex align-items-center justify-content-end">
                 <button class="btn btn-danger btn-lg" id="back-btn"><i class="far fa-arrow-alt-circle-left biggest-text"></i></button>
             </div>
             <div class="col-8 d-flex justify-content-center align-items-center p-2 img-box">
-
+                <img id="day-img" class="animate__animated">
             </div>
             <div class="col-2 d-flex align-items-center justify-content-start">
                 <button class="btn btn-danger btn-lg mr-3" id="forward-btn"><i class="far fa-arrow-alt-circle-right biggest-text"></i></button>

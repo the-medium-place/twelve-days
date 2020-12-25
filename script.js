@@ -2,62 +2,62 @@ const twelveDaysArr = [
     {
         gift: 'Partridge In a Pear Tree',
         dayTxt: '1st',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Two Turtle-Doves',
         dayTxt: '2nd',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Three French Hens',
         dayTxt: '3rd',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Four Calling Birds',
         dayTxt: '4th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'FIVE GOLD RINGS',
         dayTxt: '5th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Six Geese a-laying',
         dayTxt: '6th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Seven Swans a-swimming',
         dayTxt: '7th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Eight Maids a-milking',
         dayTxt: '8th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Nine Ladies dancing',
         dayTxt: '9th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Ten Lords a-leaping',
         dayTxt: '10th',
-        img: 'http://placekitten.com/200/200'
+        img: 'https://placekitten.com/200/200'
     },
     {
         gift: 'Eleven Pipers piping',
         dayTxt: '11th',
-        img: 'http://placekitten.com/200/200'
+        img: 'images/pipers.png'
     },
     {
         gift: 'Twelve Drummers Drumming',
         dayTxt: '12th',
-        img: 'http://placekitten.com/200/200'
+        img: 'images/drummer.jpg'
     },
 
 ]
@@ -69,7 +69,7 @@ function renderButtons() {
     $(".button-row").empty();
     for (let i = 0; i < 12; i++) {
         const newBtn = $("<button>");
-        newBtn.addClass("day-btn btn btn-lg day-btn m-1");
+        newBtn.addClass(`day-btn btn btn-lg day-btn m-1`);
 
         if (i === counterIndex) {
             newBtn.addClass('btn-danger');
@@ -85,13 +85,17 @@ function renderButtons() {
 renderDay();
 function renderDay() {
     $(".day-text").text(twelveDaysArr[counterIndex].gift);
-    $("#day").text(twelveDaysArr[counterIndex].dayTxt);
-    const newImg = $("<img>");
+    $("#day")
+    .text(twelveDaysArr[counterIndex].dayTxt);
+    const newImg = $("#day-img");
+    newImg.addClass('animate__backInUp animate__faster')
     newImg.attr('src', twelveDaysArr[counterIndex].img)
     newImg.attr('alt', twelveDaysArr[counterIndex].dayTxt)
     $(".img-box").empty().append(newImg)
     renderButtons();
 }
+
+
 
 $('.button-row').on('click', '.day-btn', (event) => {
     console.log('day clicked')
@@ -110,15 +114,30 @@ $("#forward-btn").on('click', () => {
     renderDay();
 })
 
+document.addEventListener('keyup', (e)=>{
+    const key = e.key;
+    switch(key){
+        case 'ArrowLeft':
+            $("#back-btn").removeClass('btn-success').addClass('btn-danger');
+            break;
+        case 'ArrowRight':
+            $("#forward-btn").removeClass('btn-success').addClass('btn-danger');
+            break;
+        default:
+            break;
+    }
+})
+
 document.addEventListener('keydown', function (event) {
     const key = event.key;
-    console.log(key)
     switch (key) {
         case 'ArrowLeft':
+            $("#back-btn").removeClass('btn-danger').addClass('btn-success');
             counterIndex === 0 ? counterIndex = 11 : counterIndex--;
             renderDay();
             break;
         case 'ArrowRight':
+            $("#forward-btn").removeClass('btn-danger').addClass('btn-success');
             counterIndex === 11 ? counterIndex = 0 : counterIndex++;
             renderDay();
             break;
